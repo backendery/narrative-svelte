@@ -1,0 +1,167 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Fonts */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/00-Gilroy.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/01-Gilroy.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/02-Gilroy.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/03-Gilroy.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Absolute Palette (Never changes) */
+  --dark-color: oklch(16.682% 0.00261 145.795);
+  --light-color: oklch(100% 0.00011 271.152);
+  --accent-color: oklch(92.13% 0.22225 125.179);
+  --danger-color: oklch(62.546% 0.22272 33.4);
+
+  /* Semantic Tokens (Default Dark Theme) */
+  --bg-page: var(--dark-color);
+  --bg-surface: oklch(100% 0.00011 271.152 / 0.05);
+  --bg-accent-surface: oklch(92.13% 0.22225 125.179 / 0.2);
+
+  --text-page: var(--light-color);
+  --text-muted: oklch(100% 0.00011 271.152 / 0.3);
+
+  --border-separator: oklch(100% 0.00011 271.152 / 0.1);
+  --border-dashed-separator: oklch(100% 0.00011 271.152 / 0.15);
+
+  /* Layout */
+  --container-max-width: 1024px;
+  --container-padding-x: 24px;
+  --container-padding-x-small-device: 12px;
+
+  /* App Shell Geometry */
+  --shell-header-height: 68px;
+  --shell-footer-height: 68px;
+
+  /* Radius */
+  --radius-container: 20px;
+  --radius-badge: 8px;
+
+  @media (width < 720px) {
+    --shell-header-height: 56px;
+    --shell-footer-height: 56px;
+  }
+}
+
+/* Light Theme Overrides (Overriding tokens for the light theme) */
+.light {
+  /* Absolute Palette (Never changes) */
+  --accent-color: oklch(55% 0.185 125.179);
+  --danger-color: oklch(50% 0.21 33.4);
+
+  /* Semantic Tokens (Light Theme) */
+  --bg-page: var(--light-color);
+  --text-page: var(--dark-color);
+  --bg-accent-surface: oklch(92.13% 0.22225 125.179 / 0.2);
+  --bg-surface: oklch(16.682% 0.00261 145.795 / 0.04);
+  --text-muted: oklch(16.682% 0.00261 145.795 / 0.5);
+  --border-separator: oklch(16.682% 0.00261 145.795 / 0.08);
+  --border-dashed-separator: oklch(16.682% 0.00261 145.795 / 0.12);
+}
+
+@theme inline {
+  /* Breakpoints. The --breakpoint-* prefix generates: sm:, max-sm: */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 720px;
+  --breakpoint-md: 1024px;
+
+  /* Containers. The --max-width-* prefix generates: max-w-container, etc. */
+  --max-width-container: 1024px;
+  /* Generate utility classes: p-container, px-container, gap-container-sm, etc. */
+  --spacing-container: 24px;
+  --spacing-container-sm: 12px;
+
+  /* Layouts. Generates utilities for Header: h-header, min-h-header, mt-header, top-header, etc. */
+  --spacing-header: var(--shell-header-height);
+  /* Generates utilities for Footer: h-footer, min-h-footer, pb-footer, bottom-footer, etc. */
+  --spacing-footer: var(--shell-footer-height);
+  --color-primary: var(--bg-page);
+  --color-secondary: var(--text-page);
+  --color-accent: var(--accent-color);
+  --color-danger: var(--danger-color);
+  --color-accent-surface: var(--bg-accent-surface);
+  --color-surface: var(--bg-surface);
+  --color-muted: var(--text-muted);
+  --color-separator: var(--border-separator);
+  --color-dashed-separator: var(--border-dashed-separator);
+
+  /* Typography */
+  --font-display: 'Gilroy', sans-serif;
+
+  /* Radius */
+  --radius-container: var(--radius-container);
+  --radius-badge: var(--radius-badge);
+
+  /* Colors. The --color-* prefix generates: bg-primary, text-primary, border-primary, etc. */
+  --color-*: initial;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  html {
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    font-synthesis: none;
+    font-variation-settings: normal;
+    color: var(--text-page);
+    color-scheme: dark;
+    background-color: var(--bg-page);
+    text-rendering: optimizeLegibility;
+  }
+
+  html.light {
+    color-scheme: light;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}
+
+@layer components {
+  .container {
+    max-width: var(--max-width-container);
+    padding-inline: var(--spacing-container);
+    margin-inline: auto;
+
+    @media (width < 720px) {
+      padding-inline: var(--spacing-container-sm);
+    }
+  }
+}

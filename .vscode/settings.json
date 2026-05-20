@@ -1,0 +1,57 @@
+{
+  "[css]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "never",
+    "source.organizeImports": "never"
+  },
+  "editor.formatOnSave": false,
+  "eslint.validate": [
+    "css",
+    "javascript",
+    "json",
+    "jsonc",
+    "svelte",
+    "toml",
+    "typescript",
+    "yaml"
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "prettier.enable": false,
+  "svelte.enable-ts-plugin": true,
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "cva\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*?)[\"'`]"
+    ],
+    [
+      "cn\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*?)[\"'`]"
+    ],
+    [
+      "twMerge\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*?)[\"'`]"
+    ]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  }
+}

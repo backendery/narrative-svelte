@@ -1,0 +1,39 @@
+* text=auto eol=lf
+
+# Source code
+*.css    text eol=lf
+*.js     text eol=lf
+*.json   text eol=lf
+*.svelte text eol=lf
+*.ts     text eol=lf
+
+# Config files
+*.yml   text eol=lf
+*.yaml  text eol=lf
+
+# Documentation
+*.md    text eol=lf
+*.mdx   text eol=lf
+
+# Graphics
+*.avif  binary
+*.gif   binary
+*.ico   binary
+*.jpeg  binary
+*.jpg   binary
+*.png   binary
+*.svg   binary
+*.webp  binary
+
+# Fonts
+*.eot   binary
+*.otf   binary
+*.ttf   binary
+*.woff  binary
+*.woff2 binary
+
+# Video/Audio
+*.mp4   binary
+
+# Lock files - merge strategies
+pnpm-lock.yaml merge=ours

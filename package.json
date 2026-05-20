@@ -1,0 +1,91 @@
+{
+  "name": "narrative-svelte",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@11.1.3",
+  "description": "Narrative — a website featuring virtual characters who are 'experts' on soccer betting",
+  "license": "BUSL-1.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/backendery/narrative-svelte.git"
+  },
+  "maintainers": [
+    {
+      "name": "Backendery",
+      "email": "hi@backendery.digital",
+      "url": "https://github.com/backendery"
+    }
+  ],
+  "engines": {
+    "node": "~=24.12.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "ci": "eslint ./src && svelte-check --tsconfig ./tsconfig.json --fail-on-warnings",
+    "dev": "vite dev",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "prepare": "svelte-kit sync",
+    "prepare:husky": "husky",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "types": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "@sentry/browser": "~10.53.0",
+    "@tanstack/query-core": "~5.100.10",
+    "@tanstack/svelte-form": "~1.32.0",
+    "@tanstack/svelte-query": "~6.1.29",
+    "@tanstack/zod-form-adapter": "~0.42.1",
+    "@vercel/analytics": "~2.0.1",
+    "bits-ui": "~2.18.1",
+    "class-variance-authority": "~0.7.1",
+    "clsx": "~2.1.1",
+    "date-fns": "~4.1.0",
+    "tailwind-merge": "~3.6.0",
+    "zod": "~3.25.76"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "~9.0.0",
+    "@prettier/plugin-xml": "^3.4.2",
+    "@sentry/vite-plugin": "~5.3.0",
+    "@sveltejs/adapter-vercel": "~6.3.3",
+    "@sveltejs/kit": "~2.60.1",
+    "@sveltejs/vite-plugin-svelte": "~7.1.2",
+    "@tailwindcss/vite": "~4.3.0",
+    "@testing-library/svelte": "~5.3.1",
+    "@testing-library/user-event": "~14.6.1",
+    "@types/node": "~25.8.0",
+    "@vitest/coverage-v8": "~4.1.6",
+    "eslint": "~10.4.0",
+    "eslint-plugin-better-tailwindcss": "~4.5.0",
+    "eslint-plugin-format": "~2.0.1",
+    "eslint-plugin-svelte": "~3.17.1",
+    "happy-dom": "~20.9.0",
+    "husky": "~9.1.7",
+    "lint-staged": "~17.0.4",
+    "svelte": "~5.55.2",
+    "svelte-check": "~4.4.6",
+    "tailwindcss": "~4.3.0",
+    "typescript": "~6.0.2",
+    "vite": "~8.0.7",
+    "vitest": "~4.1.3",
+    "vitest-fail-on-console": "~0.10.1"
+  },
+  "lint-staged": {
+    "*.{ts,js,mts,cts,json,md,mdx,css}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.svelte": [
+      "eslint --fix",
+      "prettier --write",
+      "svelte-check --tsconfig ./tsconfig.json"
+    ]
+  }
+}

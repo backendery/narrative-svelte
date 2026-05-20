@@ -1,0 +1,30 @@
+# Dirs
+.cache/
+.husky/
+.output/
+.svelte-kit/
+.vercel/
+.wrangler/
+build/
+coverage/
+dist/
+logs/
+node_modules/
+
+# OS
+*.local
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+pnpm-debug.log*
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
