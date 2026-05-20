@@ -1,11 +1,15 @@
 <script lang='ts'>
   import '../app.css'
 
-  const { children } = $props()
+  import { QueryClientProvider } from '@tanstack/svelte-query'
+
+  const { data, children } = $props()
 </script>
 
 <svelte:head>
   <link href='/favicon.svg' rel='icon' />
 </svelte:head>
 
-{@render children?.()}
+<QueryClientProvider client={data.queryClient}>
+  {@render children?.()}
+</QueryClientProvider>

@@ -1,10 +1,10 @@
 import { QueryClient } from '@tanstack/svelte-query'
 
+import { browser } from '$app/environment'
 import { ApiError } from '$lib/api/http.client'
 import { captureToSentry } from '$lib/sentry/sentry'
 
-// biome-ignore lint/style/noMagicNumbers: Five minutes is the intended cache window
-const QUERY_STALE_TIME = 1000 * 60 * 5
+const DEFAULT_QUERY_STALE_TIME = 1000 * 60 * 5
 
 const MAX_QUERY_RETRIES = 3
 const MIN_QUERY_RETRIES = 1
@@ -40,13 +40,24 @@ export function createQueryClient(): QueryClient {
   return new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: QUERY_STALE_TIME,
+        staleTime: DEFAULT_QUERY_STALE_TIME,
         refetchOnWindowFocus: false,
         retry: (failureCount, error) => {
+          // IMPORTANT: If we're on the server (SSR) — NO retries!
+          // This will prevent the page from freezing for 5 seconds while loading
+          if (!browser) {
+            return false
+          }
+
+          // If it's a 4xx error (e.g., 401 Unauthorized or 404 Not Found)
+          // There's no point in retrying the request; it will fail anyway
           if (isClientError(error)) {
             return false
           }
 
+          // For all other cases (server error 5xx or network connection lost
+          // resulting in a TypeError)
+          // We retry (but only in the browser, thanks to the check above)
           return failureCount < MAX_QUERY_RETRIES
         },
       },

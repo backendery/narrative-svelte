@@ -5,7 +5,7 @@
   const currentYear = new Date().getFullYear()
 </script>
 
-<footer class='bg-surface mt-4 h-footer w-full rounded-t-container'>
+<footer class='mt-4 h-footer w-full rounded-t-container bg-surface'>
   <div
     class={twcn(
       'mx-auto grid size-full max-w-container grid-cols-[1fr_auto] items-center px-container py-4',
@@ -24,8 +24,8 @@
       >
         Privacy Policy
       </a>
-      <span class='bg-separator h-4 w-px' aria-hidden='true'></span>
-      <div class='text-muted flex items-center gap-3'>
+      <span class='h-4 w-px bg-separator' aria-hidden='true'></span>
+      <div class='flex items-center gap-3 text-muted'>
         <span>Follow Us:</span>
         <a
           href='#'

@@ -1,2 +1,2 @@
-<h1 class='text-secondary text-3xl font-bold'>Privacy Policy</h1>
-<p class='text-muted mt-4'>Здесь будет политика конфиденциальности.</p>
+<h1 class='text-3xl font-bold text-secondary'>Privacy Policy</h1>
+<p class='mt-4 text-muted'>Здесь будет политика конфиденциальности.</p>

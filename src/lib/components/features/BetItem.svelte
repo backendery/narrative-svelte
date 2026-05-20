@@ -27,14 +27,14 @@
 -->
 <div
   class={twcn(
-    'bg-surface flex items-center justify-between rounded-xl p-2.5',
+    'flex items-center justify-between rounded-xl bg-surface p-2.5',
     'max-sm:flex-col max-sm:items-start max-sm:gap-2.5',
   )}
 >
   <div class='flex h-full items-center gap-3'>
     <div
       class='
-        bg-surface flex h-13 w-14 flex-col items-center justify-center gap-1.5 rounded-lg text-xs
+        flex h-13 w-14 flex-col items-center justify-center gap-1.5 rounded-lg bg-surface text-xs
         leading-none
       '
     >
@@ -55,18 +55,18 @@
   >
     <div
       class={twcn(
-        'bg-surface flex h-8 items-center justify-center rounded-lg px-3',
+        'flex h-8 items-center justify-center rounded-lg bg-surface px-3',
         'max-sm:col-span-2',
       )}
     >
       {bet.marketValue}
     </div>
-    <div class='bg-surface flex h-8 items-center justify-center rounded-lg px-3'>
+    <div class='flex h-8 items-center justify-center rounded-lg bg-surface px-3'>
       {bet.odd}
     </div>
     <div
       class={twcn(
-        'bg-accent-surface mr-2.5 flex h-8 items-center justify-center rounded-lg px-3',
+        'mr-2.5 flex h-8 items-center justify-center rounded-lg bg-accent-surface px-3',
         'max-sm:mr-0',
       )}
     >

@@ -24,7 +24,7 @@
   @param character {Character} Full character data from the API.
   @param onFollow {() => void} Optional selection handler.
 -->
-<section class='bg-surface flex w-full flex-col gap-5 rounded-md p-5'>
+<section class='flex w-full flex-col gap-5 rounded-md bg-surface p-5'>
   <CharacterStats
     name={character.name}
     avatarUrl={character.avatarUrl}

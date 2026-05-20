@@ -9,7 +9,7 @@
 
   const statItemStyles = cva(
     `
-      border-dashed-separator flex items-center gap-1 border-r border-dashed pr-3
+      flex items-center gap-1 border-r border-dashed border-dashed-separator pr-3
       max-lg:h-8 max-lg:w-full max-lg:justify-between max-lg:border-r-0 max-lg:border-b max-lg:pr-0
     `,
     {
@@ -104,13 +104,13 @@
     <!-- Yield -->
     <div class={statItemStyles({})}>
       <span class='font-light opacity-30'>Yield:</span>
-      <span class='text-accent inline-flex items-center'>{formattedYield}</span>
+      <span class='inline-flex items-center text-accent'>{formattedYield}</span>
     </div>
 
     <!-- Profit -->
     <div class={statItemStyles({})}>
       <span class='font-light opacity-30'>Profit:</span>
-      <span class='text-accent inline-flex items-center'>{formattedProfit}</span>
+      <span class='inline-flex items-center text-accent'>{formattedProfit}</span>
     </div>
   </div>
 
@@ -118,7 +118,7 @@
   <button
     type='button'
     class={twcn(
-      'bg-accent text-primary h-10 cursor-pointer rounded-lg border-none px-5 transition-opacity',
+      'h-10 cursor-pointer rounded-lg border-none bg-accent px-5 text-primary transition-opacity',
       'hover:opacity-80',
     )}
     onclick={onFollow}

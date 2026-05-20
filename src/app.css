@@ -5,28 +5,31 @@
 /* Fonts */
 @font-face {
   font-family: 'Gilroy';
-  src: url('/fonts/00-Gilroy.woff2') format('woff2');
+  src: url('fonts/00-Gilroy.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Gilroy';
-  src: url('/fonts/01-Gilroy.woff2') format('woff2');
+  src: url('fonts/01-Gilroy.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Gilroy';
-  src: url('/fonts/02-Gilroy.woff2') format('woff2');
+  src: url('fonts/02-Gilroy.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Gilroy';
-  src: url('/fonts/03-Gilroy.woff2') format('woff2');
+  src: url('fonts/03-Gilroy.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -63,6 +66,9 @@
   --radius-container: 20px;
   --radius-badge: 8px;
 
+  /* Typography */
+  --font-sans: 'Gilroy', sans-serif;
+
   @media (width < 720px) {
     --shell-header-height: 56px;
     --shell-footer-height: 56px;
@@ -96,11 +102,12 @@
   /* Generate utility classes: p-container, px-container, gap-container-sm, etc. */
   --spacing-container: 24px;
   --spacing-container-sm: 12px;
-
   /* Layouts. Generates utilities for Header: h-header, min-h-header, mt-header, top-header, etc. */
   --spacing-header: var(--shell-header-height);
   /* Generates utilities for Footer: h-footer, min-h-footer, pb-footer, bottom-footer, etc. */
   --spacing-footer: var(--shell-footer-height);
+
+  /* Colors. The --color-* prefix generates: bg-primary, text-primary, border-primary, etc. */
   --color-primary: var(--bg-page);
   --color-secondary: var(--text-page);
   --color-accent: var(--accent-color);
@@ -111,15 +118,9 @@
   --color-separator: var(--border-separator);
   --color-dashed-separator: var(--border-dashed-separator);
 
-  /* Typography */
-  --font-display: 'Gilroy', sans-serif;
-
   /* Radius */
   --radius-container: var(--radius-container);
   --radius-badge: var(--radius-badge);
-
-  /* Colors. The --color-* prefix generates: bg-primary, text-primary, border-primary, etc. */
-  --color-*: initial;
 }
 
 @layer base {
@@ -129,11 +130,12 @@
   }
 
   html {
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     font-synthesis: none;
+    font-size: 14px;
     font-variation-settings: normal;
     color: var(--text-page);
     color-scheme: dark;

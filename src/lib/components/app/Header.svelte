@@ -3,7 +3,7 @@
   import { twcn } from '$lib/utils/cx'
 </script>
 
-<header class='bg-surface mb-4 h-header w-full rounded-b-container'>
+<header class='mb-4 h-header w-full rounded-b-container bg-surface'>
   <div
     class={twcn(
       'mx-auto flex size-full max-w-container items-center justify-between px-container py-4',
@@ -22,7 +22,7 @@
         class='opacity-70 transition-opacity duration-120 ease-linear hover:opacity-100'
         data-sveltekit-preload-code='viewport'>Contacts</a
       >
-      <span class='bg-separator h-4 w-px' aria-hidden='true'></span>
+      <span class='h-4 w-px bg-separator' aria-hidden='true'></span>
       <SvgIcon
         name='Preferences'
         class={twcn(

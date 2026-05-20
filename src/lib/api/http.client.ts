@@ -171,14 +171,13 @@ async function request<R>(method: HttpMethod, path: string, { body, headers, sig
  * ```
  */
 export const httpClient = {
-  /* eslint-disable */
   /**
    * Perform a GET request.
    * @param path {string} Resource path relative to `PUBLIC_BASE_URL_API`.
    * @param options {Omit<RequestOptions, 'body'>} Optional headers or abort signal.
    * @returns {Promise<R>} Parsed JSON response.
    */
-  get: async <R>(path: string, options?: Omit<RequestOptions, 'body'>)     => request<R>('GET',    path, options),
+  get: async <R>(path: string, options?: Omit<RequestOptions, 'body'>) => request<R>('GET', path, options),
   /**
    * Perform a POST request with a JSON body.
    * @param path {string} Resource path.
@@ -186,7 +185,7 @@ export const httpClient = {
    * @param options {RequestOptions} Optional headers or abort signal.
    * @returns {Promise<R>} Parsed JSON response.
    */
-  post: async <R>(path: string, body?: unknown, options?: RequestOptions)  => request<R>('POST',   path, { ...options, body }),
+  post: async <R>(path: string, body?: unknown, options?: RequestOptions) => request<R>('POST', path, { ...options, body }),
   /**
    * Perform a PATCH request with a JSON body.
    * @param path {string} Resource path.
@@ -194,7 +193,7 @@ export const httpClient = {
    * @param options {RequestOptions} Optional headers or abort signal.
    * @returns {Promise<R>} Parsed JSON response.
    */
-  patch: async <R>(path: string, body?: unknown, options?: RequestOptions) => request<R>('PATCH',  path, { ...options, body }),
+  patch: async <R>(path: string, body?: unknown, options?: RequestOptions) => request<R>('PATCH', path, { ...options, body }),
   /**
    * Perform a PUT request with a JSON body.
    * @param path {string} Resource path.
@@ -202,13 +201,12 @@ export const httpClient = {
    * @param options {RequestOptions} Optional headers or abort signal.
    * @returns {Promise<R>} Parsed JSON response.
    */
-  put: async <R>(path: string, body?: unknown, options?: RequestOptions)   => request<R>('PUT',    path, { ...options, body }),
+  put: async <R>(path: string, body?: unknown, options?: RequestOptions) => request<R>('PUT', path, { ...options, body }),
   /**
    * Perform a DELETE request.
    * @param path {string} Resource path.
    * @param options {Omit<RequestOptions, 'body'>} Optional headers or abort signal.
    * @returns {Promise<R>} Parsed JSON response.
    */
-  delete: async <R>(path: string, options?: Omit<RequestOptions, 'body'>)  => request<R>('DELETE', path, options),
-  /* eslint-enable */
+  delete: async <R>(path: string, options?: Omit<RequestOptions, 'body'>) => request<R>('DELETE', path, options),
 } as const

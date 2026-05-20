@@ -1,2 +1,2 @@
-<h1 class='text-secondary text-3xl font-bold'>Contacts</h1>
-<p class='text-muted mt-4'>Здесь будут наши контакты.</p>
+<h1 class='text-3xl font-bold text-secondary'>Contacts</h1>
+<p class='mt-4 text-muted'>Здесь будут наши контакты.</p>
